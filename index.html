@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050a07" />
+<title>The Lord of the Rings — A Story Retelling</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ ATMOSPHERE LAYERS ============ -->
+<div class="vignette" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ PROGRESS ============ -->
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<!-- ============ DECK ============ -->
+<main class="deck" id="deck">
+
+  <!-- ========== SLIDE 1 — INTRO ========== -->
+  <section class="slide active" data-scene="shire">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s1sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#03100b"/>
+            <stop offset="55%" stop-color="#0a2618"/>
+            <stop offset="100%" stop-color="#1d4a30"/>
+          </linearGradient>
+          <radialGradient id="s1moonGlow">
+            <stop offset="0%" stop-color="#f7e7b0" stop-opacity=".9"/>
+            <stop offset="40%" stop-color="#d4af37" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s1far" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#14432c"/><stop offset="100%" stop-color="#0a2417"/>
+          </linearGradient>
+          <linearGradient id="s1mid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a5334"/><stop offset="100%" stop-color="#0d2c1b"/>
+          </linearGradient>
+          <linearGradient id="s1near" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0f3520"/><stop offset="100%" stop-color="#061209"/>
+          </linearGradient>
+          <radialGradient id="s1doorGlow">
+            <stop offset="0%" stop-color="#f6d97a" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="#f6d97a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s1sky)"/>
+        <circle cx="1150" cy="170" r="280" fill="url(#s1moonGlow)"/>
+        <circle cx="1150" cy="170" r="74" fill="#f6e9bd"/>
+        <circle cx="1128" cy="150" r="13" fill="#e2d3a2" opacity=".45"/>
+        <circle cx="1178" cy="194" r="9" fill="#e2d3a2" opacity=".35"/>
+
+        <g class="clouds" opacity=".3">
+          <ellipse cx="300" cy="190" rx="230" ry="26" fill="#9fc7b0"/>
+          <ellipse cx="640" cy="120" rx="170" ry="18" fill="#9fc7b0"/>
+          <ellipse cx="1040" cy="280" rx="270" ry="22" fill="#9fc7b0"/>
+        </g>
+
+        <path d="M0 470 L140 350 L250 430 L400 300 L540 410 L690 320 L830 430 L980 340 L1130 440 L1280 360 L1440 450 L1440 810 L0 810 Z" fill="url(#s1far)"/>
+        <path d="M0 560 Q180 470 360 530 T720 520 T1080 540 T1440 500 L1440 810 L0 810 Z" fill="url(#s1mid)"/>
+        <path d="M0 660 Q240 570 520 640 T1000 630 T1440 600 L1440 810 L0 810 Z" fill="url(#s1near)"/>
+
+        <circle cx="330" cy="690" r="95" fill="url(#s1doorGlow)"/>
+        <circle cx="330" cy="690" r="52" fill="#08200f" stroke="#d4af37" stroke-width="4" opacity=".9"/>
+        <circle cx="330" cy="690" r="8" fill="#f2dfa3"/>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">A Story Retelling</p>
+      <h1 class="title reveal" style="--d:.18s">The Lord<br /><span>of the Rings</span></h1>
+      <div class="rule reveal" style="--d:.32s"></div>
+      <p class="subtitle reveal" style="--d:.44s">A journey of friendship, courage and hope</p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 2 — THE RING ========== -->
+  <section class="slide" data-scene="ring">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s2sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#050a08"/>
+            <stop offset="60%" stop-color="#0b1a12"/>
+            <stop offset="100%" stop-color="#1a1408"/>
+          </linearGradient>
+          <radialGradient id="s2ember">
+            <stop offset="0%" stop-color="#ffb347" stop-opacity=".5"/>
+            <stop offset="55%" stop-color="#b3541e" stop-opacity=".16"/>
+            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s2gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f7e7a8"/>
+            <stop offset="35%" stop-color="#d4af37"/>
+            <stop offset="60%" stop-color="#8a6416"/>
+            <stop offset="100%" stop-color="#f2dfa3"/>
+          </linearGradient>
+          <filter id="s2glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="14" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s2sky)"/>
+        <ellipse cx="900" cy="560" rx="640" ry="380" fill="url(#s2ember)"/>
+
+        <path d="M0 0 L540 0 L370 250 L240 470 L340 700 L0 810 Z" fill="#07120c" opacity=".95"/>
+        <path d="M1440 0 L960 0 L1130 240 L1270 480 L1180 720 L1440 810 Z" fill="#07120c" opacity=".95"/>
+        <path d="M540 0 L578 120 L616 0 Z M650 0 L680 82 L710 0 Z M760 0 L792 145 L824 0 Z" fill="#08140d"/>
+        <path d="M0 700 Q360 655 720 700 T1440 675 L1440 810 L0 810 Z" fill="#050d09"/>
+
+        <g class="ring-float" filter="url(#s2glow)">
+          <circle cx="900" cy="380" r="96" fill="none" stroke="url(#s2gold)" stroke-width="20"/>
+          <circle cx="900" cy="380" r="130" fill="none" stroke="#d4af37" stroke-width="1.4" opacity=".4"/>
+          <circle cx="900" cy="380" r="168" fill="none" stroke="#d4af37" stroke-width="1" opacity=".18"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">Chapter Two</p>
+      <h2 class="title small reveal" style="--d:.18s">The <span>Mysterious</span> Ring</h2>
+      <div class="rule reveal" style="--d:.3s"></div>
+      <p class="lead reveal" style="--d:.42s">
+        In the peaceful Shire, a young hobbit named Frodo receives a golden ring —
+        and with it, the fate of the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 3 — THE JOURNEY ========== -->
+  <section class="slide" data-scene="journey">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s3sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#040d0a"/>
+            <stop offset="50%" stop-color="#0c2a1e"/>
+            <stop offset="100%" stop-color="#245040"/>
+          </linearGradient>
+          <linearGradient id="s3peak" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4b6b5e"/>
+            <stop offset="55%" stop-color="#1a3d2e"/>
+            <stop offset="100%" stop-color="#0a2016"/>
+          </linearGradient>
+          <linearGradient id="s3snow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f4ecd8"/>
+            <stop offset="100%" stop-color="#cdbf9a" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="s3haze">
+            <stop offset="0%" stop-color="#d4af37" stop-opacity=".28"/>
+            <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s3sky)"/>
+        <circle cx="720" cy="620" r="520" fill="url(#s3haze)"/>
+
+        <path d="M0 540 L200 300 L340 450 L520 240 L700 440 L880 300 L1050 460 L1240 320 L1440 470 L1440 810 L0 810 Z" fill="url(#s3peak)"/>
+        <path d="M200 300 L250 360 L175 360 Z" fill="url(#s3snow)"/>
+        <path d="M520 240 L575 315 L470 315 Z" fill="url(#s3snow)"/>
+        <path d="M880 300 L930 365 L835 365 Z" fill="url(#s3snow)"/>
+        <path d="M1240 320 L1290 385 L1195 385 Z" fill="url(#s3snow)"/>
+
+        <path d="M0 640 Q240 560 480 620 T960 610 T1440 580 L1440 810 L0 810 Z" fill="#0b2418"/>
+        <path d="M0 720 Q300 660 620 720 T1440 690 L1440 810 L0 810 Z" fill="#061309"/>
+
+        <path class="trail" d="M720 810 C 660 720 790 660 720 590 C 650 520 770 470 730 410"
+              fill="none" stroke="#d4af37" stroke-width="6" stroke-linecap="round"
+              stroke-dasharray="16 14" opacity=".65"/>
+
+        <g class="birds" stroke="#f2dfa3" stroke-width="3" fill="none" opacity=".7" stroke-linecap="round">
+          <path d="M0 0 q12 -10 24 0 q12 -10 24 0"/>
+          <path d="M52 26 q10 -8 20 0 q10 -8 20 0"/>
+          <path d="M-46 34 q9 -7 18 0 q9 -7 18 0"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">Chapter Three</p>
+      <h2 class="title small reveal" style="--d:.18s">The Dangerous <span>Journey</span></h2>
+      <div class="rule reveal" style="--d:.3s"></div>
+      <p class="lead reveal" style="--d:.42s">
+        Nine companions. One road. To Mordor — where the ring must be destroyed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 4 — FRIENDSHIP ========== -->
+  <section class="slide" data-scene="forest">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s4sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#03100a"/>
+            <stop offset="60%" stop-color="#08281a"/>
+            <stop offset="100%" stop-color="#123a26"/>
+          </linearGradient>
+          <radialGradient id="s4glow">
+            <stop offset="0%" stop-color="#f6d97a" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#f6d97a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s4sky)"/>
+
+        <!-- far trees -->
+        <g fill="#0a2418" opacity=".9">
+          <path d="M120 640 L120 330 L160 330 L160 640 Z"/>
+          <path d="M60 400 L140 240 L220 400 Z"/>
+          <path d="M380 660 L380 360 L415 360 L415 660 Z"/>
+          <path d="M330 430 L397 280 L465 430 Z"/>
+          <path d="M1050 650 L1050 340 L1090 340 L1090 650 Z"/>
+          <path d="M990 410 L1070 250 L1150 410 Z"/>
+          <path d="M1290 670 L1290 380 L1325 380 L1325 670 Z"/>
+          <path d="M1240 450 L1307 300 L1375 450 Z"/>
+        </g>
+
+        <!-- ground -->
+        <path d="M0 690 Q360 640 720 690 T1440 660 L1440 810 L0 810 Z" fill="#061309"/>
+
+        <!-- warm light between the two friends -->
+        <circle cx="720" cy="650" r="150" fill="url(#s4glow)"/>
+
+        <!-- two small silhouettes -->
+        <g fill="#04100a">
+          <ellipse cx="676" cy="712" rx="30" ry="42"/>
+          <circle cx="676" cy="662" r="18"/>
+          <ellipse cx="766" cy="722" rx="28" ry="38"/>
+          <circle cx="766" cy="676" r="16"/>
+        </g>
+        <circle cx="720" cy="640" r="10" fill="#f6d97a" opacity=".9"/>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">Chapter Four</p>
+      <h2 class="title small reveal" style="--d:.18s">Friendship &amp; <span>Challenges</span></h2>
+      <div class="rule reveal" style="--d:.3s"></div>
+      <p class="lead reveal" style="--d:.42s">
+        The ring grows heavier. Sam never leaves his side.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 5 — FINAL BATTLE ========== -->
+  <section class="slide" data-scene="battle">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s5sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#05070a"/>
+            <stop offset="55%" stop-color="#22110c"/>
+            <stop offset="100%" stop-color="#4a1e0a"/>
+          </linearGradient>
+          <radialGradient id="s5lava">
+            <stop offset="0%" stop-color="#ffd27a" stop-opacity=".95"/>
+            <stop offset="30%" stop-color="#ff8a3d" stop-opacity=".6"/>
+            <stop offset="70%" stop-color="#b3301a" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s5rock" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#241109"/><stop offset="100%" stop-color="#0a0503"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s5sky)"/>
+        <ellipse cx="720" cy="470" rx="620" ry="380" fill="url(#s5lava)"/>
+
+        <!-- distant spires -->
+        <path d="M0 520 L180 330 L280 460 L420 300 L520 470 L720 380 L920 470 L1060 310 L1180 460 L1300 340 L1440 500 L1440 810 L0 810 Z" fill="url(#s5rock)"/>
+
+        <!-- volcano -->
+        <path d="M540 810 L720 360 L900 810 Z" fill="#120804"/>
+        <path d="M660 810 L720 400 L790 810 Z" fill="#ff8a3d" opacity=".35"/>
+        <path d="M700 420 L742 420 L730 470 L712 470 Z" fill="#ffd27a" opacity=".8"/>
+
+        <!-- foreground ridge -->
+        <path d="M0 720 Q240 660 480 720 T960 700 T1440 730 L1440 810 L0 810 Z" fill="#080403"/>
+
+        <!-- embers (svg layer) -->
+        <g class="embers" fill="#ffb347">
+          <circle cx="600" cy="600" r="3" opacity=".8"/>
+          <circle cx="860" cy="520" r="2.4" opacity=".7"/>
+          <circle cx="740" cy="660" r="2" opacity=".6"/>
+          <circle cx="960" cy="620" r="2.8" opacity=".75"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">Chapter Five</p>
+      <h2 class="title small reveal" style="--d:.18s">The Final <span>Battle</span></h2>
+      <div class="rule reveal" style="--d:.3s"></div>
+      <p class="lead reveal" style="--d:.42s">
+        At Mount Doom the darkness ends — and the world breathes again.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 6 — THE MESSAGE ========== -->
+  <section class="slide" data-scene="dawn">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s6sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#07120d"/>
+            <stop offset="45%" stop-color="#1d3d24"/>
+            <stop offset="78%" stop-color="#7a6a2a"/>
+            <stop offset="100%" stop-color="#d8b45a"/>
+          </linearGradient>
+          <radialGradient id="s6sun">
+            <stop offset="0%" stop-color="#fff4c9" stop-opacity="1"/>
+            <stop offset="35%" stop-color="#f4d67e" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s6hill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1f4a2c"/><stop offset="100%" stop-color="#0a1d12"/>
+          </linearGradient>
+          <radialGradient id="s6doorGlow">
+            <stop offset="0%" stop-color="#ffe9a8" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#ffe9a8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1440" height="810" fill="url(#s6sky)"/>
+        <circle cx="720" cy="560" r="330" fill="url(#s6sun)"/>
+        <circle cx="720" cy="560" r="78" fill="#fff2c6" opacity=".95"/>
+
+        <path d="M0 560 Q200 480 420 540 T860 530 T1440 490 L1440 810 L0 810 Z" fill="url(#s6hill)"/>
+        <path d="M0 660 Q260 580 560 650 T1080 640 T1440 610 L1440 810 L0 810 Z" fill="#0b2317"/>
+        <path d="M0 740 Q320 690 700 745 T1440 720 L1440 810 L0 810 Z" fill="#05120a"/>
+
+        <circle cx="1080" cy="690" r="90" fill="url(#s6doorGlow)"/>
+        <circle cx="1080" cy="690" r="46" fill="#0a2012" stroke="#d4af37" stroke-width="4" opacity=".85"/>
+
+        <g class="birds" stroke="#2b1f08" stroke-width="3" fill="none" opacity=".5" stroke-linecap="round">
+          <path d="M0 0 q12 -10 24 0 q12 -10 24 0"/>
+          <path d="M56 28 q10 -8 20 0 q10 -8 20 0"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow reveal" style="--d:.05s">Chapter Six</p>
+      <h2 class="title small reveal" style="--d:.18s">The <span>Message</span></h2>
+      <div class="rule reveal" style="--d:.3s"></div>
+      <blockquote class="quote reveal" style="--d:.42s">
+        “You don't have to be powerful to be a hero.<br />
+        Sometimes, the smallest people can change the world.”
+      </blockquote>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ UI ============ -->
+<nav class="dots" id="dots" aria-label="Slide navigation"></nav>
+
+<div class="counter" id="counter">01 / 06</div>
+
+<button class="notes-toggle" id="notesToggle" aria-label="Toggle speaker notes">Notes <kbd>N</kbd></button>
+
+<div class="controls">
+  <button class="arrow" id="prev" aria-label="Previous slide">‹</button>
+  <button class="arrow" id="next" aria-label="Next slide">›</button>
+</div>
+
+<aside class="notes" id="notes" aria-live="polite">
+  <div class="notes-inner">
+    <p class="notes-label">Speaker Notes</p>
+    <p id="notesBody"></p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+  </html>
